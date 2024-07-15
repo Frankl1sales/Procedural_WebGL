@@ -6,8 +6,7 @@
 *.tmp
 
 # Ignorar diretórios específicos
-/node_modules
-/dist
+
 /etapa_1
 /etapa_2
 
