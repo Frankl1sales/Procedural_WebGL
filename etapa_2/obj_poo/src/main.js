@@ -140,9 +140,11 @@ async function main() {
     };
   });
 
+
   // Create ground
-  const groundSize = 50; // Size of the ground
-  const groundData = createGround(groundSize);
+  const groundSize = 500; // Size of the ground
+  const resolution = 10; // Resolução para gerar o terreno
+  const groundData = createGround(groundSize,resolution);
   const groundBufferInfo = twgl.createBufferInfoFromArrays(gl, groundData);
   const groundVAO = twgl.createVAOFromBufferInfo(gl, meshProgramInfo, groundBufferInfo);
 
@@ -151,33 +153,26 @@ async function main() {
 
   const extents = getGeometriesExtents(obj.geometries);
   const range = m4.subtractVectors(extents.max, extents.min);
-  const objOffset = m4.scaleVector(
-    m4.addVectors(
-      extents.min,
-      m4.scaleVector(range, 0.5)
-    ),
-    -1
-  );
 
   const cameraTarget = [0, 0, 0];
   const radius = m4.length(range) * 1.5;
   const cameraPosition = m4.addVectors(cameraTarget, [0, 0, radius * 1.5]);
   const zNear = radius / 100;
-  const zFar = radius;
+  const zFar = radius * 100;
 
   function degToRad(deg) {
     return deg * Math.PI / 180;
   }
 
-  const numWindmills = 100; // Number of windmills to render
-  const distanceBetweenWindmills = 10; // Distance between windmills
-  const numRows = 3; // Número de fileiras
-  const windmillTransforms = createWindmillTransforms(numWindmills, distanceBetweenWindmills, numRows);
+  const numWindmills = 10; // 5 moinhos por fileira
+  const distanceBetweenWindmills = 20; // Distance between windmills
+  const numRows = 1; // Número de fileiras
+  const windmillTransforms = createWindmillTransforms(numWindmills, distanceBetweenWindmills, numRows, 20);
 
   document.getElementById("cameraX").addEventListener("input", () => updateCameraPosition(cameraPosition));
   document.getElementById("cameraY").addEventListener("input", () => updateCameraPosition(cameraPosition));
   document.getElementById("cameraZ").addEventListener("input", () => updateCameraPosition(cameraPosition));
-
+  
   function render(time) {
     time *= 0.001; // Convert to seconds
 

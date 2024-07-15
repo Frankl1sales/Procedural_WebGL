@@ -43,11 +43,11 @@ function applyPerspective(position, cameraPosition, fov, near, far) {
 }
 
 // Função para criar transformações para múltiplos moinhos de vento
-function createWindmillTransforms(numWindmills, distanceBetweenWindmills, numRows) {
+function createWindmillTransforms(numWindmills, distanceBetweenWindmills, numRows, distanceBetweenRows) {
   const transforms = [];
   for (let row = 0; row < numRows; row++) {
     for (let i = 0; i < numWindmills; i++) {
-      const zPosition = row * 5; // Aumenta a posição Z para cada fileira
+      const zPosition = row * distanceBetweenRows; // Distância entre fileiras
       const xPosition = i * distanceBetweenWindmills; // Distribui em X
       const scale = [1, 1, 1]; // Escala padrão
 
@@ -59,6 +59,7 @@ function createWindmillTransforms(numWindmills, distanceBetweenWindmills, numRow
   }
   return transforms;
 }
+
 
 // Função para atualizar a posição da câmera
 function updateCameraPosition(cameraPosition) {
