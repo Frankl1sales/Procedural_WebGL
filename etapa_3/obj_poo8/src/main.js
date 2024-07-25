@@ -96,7 +96,6 @@ async function main() {
 
   // Load ground texture
   const groundTexture = await twgl.createTexture(gl, { src: 'assets/gray_rocks_diff_4k.jpg', flipY: true });
-
   const extents = getGeometriesExtents(obj.geometries); // usa-se o tamanho do objeto p ser suficientemente grande
   const range = m4.subtractVectors(extents.max, extents.min); // minimos e max
 
