@@ -3,7 +3,7 @@
 ## Descrição
 
 Este projeto visa criar um cenário 3D procedural utilizando WebGL e a biblioteca TWGL para renderização. O cenário inclui diversos tipos de objetos 3D distribuídos de maneira automática e configurável, com suporte a alterações dinâmicas durante a execução.
-[Exemplo de Imagem](https://github.com/Frankl1sales/procedural_generation/blob/main/etapa_3/obj_poo8/imageSample.png)
+![Exemplo de Imagem](https://github.com/Frankl1sales/procedural_generation/blob/main/etapa_3/obj_poo8/imageSample.png)
 ## Principais Pontos
 
 - **Geração Procedural**: O projeto utiliza algoritmos para gerar e distribuir objetos 3D em um cenário. Esses objetos incluem Windmills, Skeletons, Trees, Planes e Zombies.
