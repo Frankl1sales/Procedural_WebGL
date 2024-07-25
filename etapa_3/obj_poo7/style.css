@@ -1,0 +1,17 @@
+@import url("https://webgl2fundamentals.org/webgl/resources/webgl-tutorials.css");
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+canvas {
+  border: 1px solid black;
+}
+
+div {
+  margin: 10px;
+}

@@ -1,0 +1,22 @@
+# Blender 4.1.1 MTL File: 'None'
+# www.blender.org
+
+newmtl Glow
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl skeleton
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd skeleton_texture.png
+map_d /home/frank/temp/python-venv/cg_virtual/webgl/trabalho_cg/etapa_3/obj_poo7/KayKit_Skeletons_1.0_FREE/characters/fbx/skeleton_texture.png
