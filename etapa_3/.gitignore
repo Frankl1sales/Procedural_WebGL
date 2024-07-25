@@ -1,0 +1,20 @@
+# Ignorar arquivos compilados
+*.exe
+*.dll
+
+# Ignorar arquivos temporários
+*.tmp
+
+# Ignorar diretórios específicos
+/etapa_1
+/etapa_2
+/etapa_3/n_poo
+/etapa_3/obj_poo
+/etapa_3/obj_poo (cópia)
+/etapa_3/Finalversion
+/etapa_3/obj_poo4
+/etapa_3/obj_poo5
+/etapa_3/obj_poo6
+/etapa_3/obj_poo7
+
+

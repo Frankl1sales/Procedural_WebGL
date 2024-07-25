@@ -98,48 +98,12 @@ async function main() {
 
 
   // Carregamento do OBJ e MTL:
-  const objHref = 'assets/windmill.obj';
+  const objHref = 'assets/MountainRocks-0.obj';
   const response = await fetch(objHref);
   const text = await response.text();
   const obj = parseOBJ(text);
   const baseHref = new URL(objHref, window.location.href);
   
-  const matTexts = await Promise.all(obj.materialLibs.map(async filename => {
-    const matHref = new URL(filename, baseHref).href;
-    const response = await fetch(matHref);
-    return await response.text();
-  }));
-  const materials = parseMTL(matTexts.join('\n'));
-  
-  
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   // Criação do Ground - chão 
   const groundSize = 500;
@@ -151,8 +115,8 @@ async function main() {
   // Load ground texture
   const groundTexture = await twgl.createTexture(gl, { src: 'assets/gray_rocks_diff_4k.jpg', flipY: true });
 
-  const extents = getGeometriesExtents(obj.geometries);
-  const range = m4.subtractVectors(extents.max, extents.min);
+  const extents = getGeometriesExtents(obj.geometries); // usa-se o tamanho do objeto p ser suficientemente grande
+  const range = m4.subtractVectors(extents.max, extents.min); // minimos e max
 
 
 

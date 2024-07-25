@@ -48,37 +48,7 @@ function arePositionsClose(pos1, pos2, minDistance) {
   return Math.sqrt(dx * dx + dz * dz) < minDistance;
 }
 
-// Função para criar transformações para múltiplos moinhos de vento
-function createWindmillTransforms(numWindmills, distanceBetweenWindmills, numRows, distanceBetweenRows) {
-  const transforms = [];
-  const minDistance = 10; // Distância mínima para evitar colisões
 
-  for (let row = 0; row < numRows; row++) {
-    for (let i = 0; i < numWindmills; i++) {
-      let zPosition = row * distanceBetweenRows;
-      let xPosition = i * distanceBetweenWindmills;
-      let scale = [1, 1, 1];
-
-      // Verifique se a posição está longe o suficiente das posições existentes
-      let validPosition = true;
-      for (const transform of transforms) {
-        if (arePositionsClose([xPosition, 0, zPosition], transform.translation, minDistance)) {
-          validPosition = false;
-          break;
-        }
-      }
-
-      // Se a posição for válida, adicione a transformação
-      if (validPosition) {
-        transforms.push({
-          translation: [xPosition, 0, zPosition],
-          scale: scale,
-        });
-      }
-    }
-  }
-  return transforms;
-}
 
 // Função para criar transformações para múltiplos banners
 function createTransforms(numBanners, distanceBetweenBanners, rowHeight) {
@@ -176,20 +146,42 @@ async function loadObj(gl, baseHref, meshProgramInfo, bannerHref) {
   return bannerParts;
 }
 
-function objrender(gl, meshProgramInfo, bannerParts, bannerTransforms) {
-  // Render banners
-  for (const { bufferInfo, vao, material } of bannerParts) {
-    gl.bindVertexArray(vao);
 
-    for (const { translation, scale } of bannerTransforms) {
-      let u_world = m4.translate(m4.identity(), ...translation);
-      u_world = m4.scale(u_world, ...scale);
 
-      twgl.setUniforms(meshProgramInfo, { u_world }, material);
-      twgl.drawBufferInfo(gl, bufferInfo);
-    }
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Função para atualizar a posição da câmera
