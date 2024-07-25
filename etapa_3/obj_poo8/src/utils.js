@@ -31,18 +31,6 @@ function degToRad(deg) {
   return deg * Math.PI / 180;
 }
 
-// Função para aplicar a perspectiva nas coordenadas dos objetos
-function applyPerspective(position, cameraPosition, fov, near, far) {
-  const aspect = window.innerWidth / window.innerHeight;
-  const f = 1 / Math.tan((fov / 2) * (Math.PI / 180));
-  const rangeInv = 1 / (near - far);
-
-  return [
-    (position[0] - cameraPosition[0]) * f / aspect,
-    (position[1] - cameraPosition[1]) * f,
-    (position[2] - cameraPosition[2]) * rangeInv
-  ];
-}
 
 // Função para verificar se duas posições estão muito próximas
 function arePositionsClose(pos1, pos2, minDistance) {
