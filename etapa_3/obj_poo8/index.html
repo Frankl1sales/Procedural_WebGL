@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7WindWill7revisado</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://webgl2fundamentals.org/webgl/resources/webgl-utils.js"></script>
+  <script src="https://twgljs.org/dist/4.x/twgl.min.js"></script>
+  <script src="https://webgl2fundamentals.org/webgl/resources/m4.js"></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      margin: 0;
+    }
+    canvas {
+      border: 1px solid black;
+      margin-right: 20px;
+    }
+    #controls {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+    div {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <!-- Controles -->
+  <div id="controls">
+    <!-- Botão para gerar novo cenário -->
+    <div>
+      <button id="generateButton">Gerar Novo Cenário</button>
+    </div>
+
+    <!-- Sliders para controle da câmera -->
+    <div>
+      <label for="cameraX">Câmera X:</label>
+      <input type="range" id="cameraX" min="0" max="400" step="0.1" value="0">
+    </div>
+    <div>
+      <label for="cameraY">Câmera Y:</label>
+      <input type="range" id="cameraY" min="-20" max="20" step="0.1" value="0">
+    </div>
+    <div>
+      <label for="cameraZ">Câmera Z:</label>
+      <input type="range" id="cameraZ" min="0" max="300" step="0.1" value="20">
+    </div>
+
+    <!-- Controles para os objetos -->
+    <div>
+      <label for="numWindmills">Número de Windmills:</label>
+      <input type="number" id="numWindmills" value="100">
+    </div>
+    <div>
+      <label for="windmillsDistance">Distância entre Windmills:</label>
+      <input type="number" id="windmillsDistance" value="20">
+    </div>
+    <div>
+      <label for="numSkeleton_Arrow">Número de Skeleton Arrow:</label>
+      <input type="number" id="numSkeleton_Arrow" value="100">
+    </div>
+    <div>
+      <label for="Skeleton_ArrowDistance">Distância entre Skeleton Arrow:</label>
+      <input type="number" id="Skeleton_ArrowDistance" value="20">
+    </div>
+    <div>
+      <label for="numSkeleton_Warrior">Número de Skeleton Warrior:</label>
+      <input type="number" id="numSkeleton_Warrior" value="100">
+    </div>
+    <div>
+      <label for="Skeleton_WarriorDistance">Distância entre Skeleton Warrior:</label>
+      <input type="number" id="Skeleton_WarriorDistance" value="20">
+    </div>
+    <div>
+      <label for="numTrees">Número de Trees:</label>
+      <input type="number" id="numTrees" value="100">
+    </div>
+    <div>
+      <label for="TreesDistance">Distância entre Trees:</label>
+      <input type="number" id="TreesDistance" value="20">
+    </div>
+    <div>
+      <label for="numPlanes">Número de Planes:</label>
+      <input type="number" id="numPlanes" value="10">
+    </div>
+    <div>
+      <label for="planesDistance">Distância entre Planes:</label>
+      <input type="number" id="planesDistance" value="40">
+    </div>
+    <div>
+      <label for="numZombie">Número de Zombies:</label>
+      <input type="number" id="numZombie" value="10">
+    </div>
+    <div>
+      <label for="zombieDistance">Distância entre Zombies:</label>
+      <input type="number" id="zombieDistance" value="40">
+    </div>
+  </div>
+
+  <script src="src/utils.js"></script>
+  <script src="src/objParser.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>
