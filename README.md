@@ -60,4 +60,4 @@ Contribuições são bem-vindas! Para contribuir, faça um fork do repositório 
 
 ## Licença
 
-Este projeto é licenciado sob a [MIT License](LICENSE).
+Este projeto é licenciado sob a [MIT License](LICENSE.md).
